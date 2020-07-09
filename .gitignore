@@ -1,0 +1,4 @@
+__pycache__/
+.vscode/
+*/Expense*.csv
+*/sqlite.db
