@@ -143,9 +143,9 @@ class Transaction:
 
     def validate(self):
         if amount < 0 and demand in demand_postive:
-            raise Error(f"transaction ${self.uuid} has negative amount ${self.amount} for demand {self.demand}")
+            raise Exception(f"transaction ${self.uuid} has negative amount ${self.amount} for demand {self.demand}")
         if amount > 0 and demand in demand_negative:
-            raise Error(f"transaction ${self.uuid} has positive amount ${self.amount} for demand {self.demand}")
+            raise Exception(f"transaction ${self.uuid} has positive amount ${self.amount} for demand {self.demand}")
         if merchant is None and demand in demand_negative:
-            raise Error(f"transaction ${self.uuid} has no merchant for demand {self.demand}")
+            raise Exception(f"transaction ${self.uuid} has no merchant for demand {self.demand}")
         

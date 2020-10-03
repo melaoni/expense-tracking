@@ -47,7 +47,7 @@ def compute_refunds_and_splits():
     conn = create_connection()
 
     transactions = pd.read_sql(
-        sql='select uuid, date, account, parties, amount from entry',
+        sql='select uuid, date, account, parties, amount, category, subcategory, item from entry',
         con=conn,
         parse_dates={'date': '%Y-%m-%d'}
     )
@@ -67,6 +67,6 @@ def compute_refunds_and_splits():
     original_sum = transactions['amount'].sum()
 
     if reconciled_sum != original_sum:
-        raise Error('Failed to reconcile post refund amount and original mount')
+        raise Exception('Failed to reconcile post refund amount and original mount')
 
     return transactions
