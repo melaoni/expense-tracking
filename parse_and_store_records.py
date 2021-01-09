@@ -2,8 +2,11 @@ from datetime import date
 from models.models import Account, Demand, Category, Subcategory, Party, Transaction
 from database.database import create_connection, insert_transaction, get_transaction, insert_refund
 from parser.mastersheeet_parser import read_mastersheet
+from connectors import mastersheet
 
 if __name__ == '__main__':
+    mastersheet.download()
+
     database = r"./database/sqlite.db"
     conn = create_connection(database)
     with conn:

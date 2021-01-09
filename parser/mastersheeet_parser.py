@@ -3,7 +3,8 @@ from datetime import datetime
 from typing import List, Tuple, Dict
 from models.models import Transaction, Account, Demand, Category, Subcategory, Party
 
-mastersheet_file = "./parser/Expense tracking 2020 - Master.csv"
+# mastersheet_file = "./parser/Expense tracking 2020 - Master.csv"
+mastersheet_file = "./parser/mastersheet.csv"
 
 def read_mastersheet() -> Tuple[List[Transaction],List[Dict]]:
     transactions=[]
@@ -20,7 +21,7 @@ def read_mastersheet() -> Tuple[List[Transaction],List[Dict]]:
             refund = to_refund(row)
             if refund:
                 refunds.append(to_refund(row))
-        
+    
     return (transactions, refunds)
 
 def to_transaction(row) -> Transaction:
