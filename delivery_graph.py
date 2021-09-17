@@ -18,17 +18,17 @@ if __name__ == '__main__':
         axis=1
     )
     transactions['month'] = transactions.apply(
-        lambda row: row['date'].strftime('%m'),
+        lambda row: row['date'].strftime('%Y-%m'),
         axis=1
     )
     transactions = transactions.groupby(['month', 'item', 'category'])
     transactions = transactions['real_amount'].sum().reset_index(name ='Total Amount')
 
     eat_transactions = transactions.loc[transactions['category'].isin(['Eat'])]
-    delivery_transactions = eat_transactions.loc[eat_transactions['item'].isin(['Delivery', 'Takeout' 'Coke'])]
+    delivery_transactions = eat_transactions.loc[eat_transactions['item'].isin(['Delivery', 'Takeout'])]
     food_court_transactions = eat_transactions.loc[eat_transactions['item'].isin(['Food court', 'Cafe', 'Ice Cream', 'Bubble Tea'])]
     restaurants_transactions = eat_transactions.loc[eat_transactions['item'].isin(['Restaurant', 'Taxi'])]
-    grocery_transactions = eat_transactions.loc[eat_transactions['item'].isin(['Grocery', 'Subscription'])]
+    grocery_transactions = eat_transactions.loc[eat_transactions['item'].isin(['Grocery'])]
 
 
     fig = go.Figure(data=[
