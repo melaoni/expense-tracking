@@ -16,3 +16,5 @@ if __name__ == '__main__':
         
         for refund in refunds: 
             insert_refund(conn, refund)
+
+    conn.close()

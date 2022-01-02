@@ -4,11 +4,11 @@ import pandas as pd
 from .importer import Importer
 from models.models import Account, Demand, Category, Subcategory, Party, Transaction
 
-checking_file = "/Users/mejiang/Downloads/2021-03-06_360Checking...0701.csv"
-saving_file = "/Users/mejiang/Downloads/2021-03-06_360MoneyMarket...9367.csv"
-discover_file = "/Users/mejiang/Downloads/DFS-Search-20210306.csv"
-freedome_file = "/Users/mejiang/Downloads/Chase1205_Activity20210101_20210306_20210306.CSV"
-sapphire_file = "/Users/mejiang/Downloads/Chase3521_Activity20210101_20210306_20210306.CSV"
+checking_file = "/Users/melaniejiang/Downloads/2021-09-17_360Checking...0701.csv"
+saving_file = "/Users/melaniejiang/Downloads/2021-09-17_360MoneyMarket...9367.csv"
+discover_file = "/Users/melaniejiang/Downloads/DFS-Search-20210917.csv"
+freedome_file = "/Users/melaniejiang/Downloads/Chase1205_Activity20210101_20210917_20210917.CSV"
+sapphire_file = "/Users/melaniejiang/Downloads/Chase3521_Activity20210101_20210917_20210917.CSV"
 
 # Date, Amount, Source, Description
 
